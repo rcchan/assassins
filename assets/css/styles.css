@@ -37,6 +37,7 @@ h2 {
 header {
   -webkit-box-shadow: 0px 1px 1.5px rgba(0, 0, 0, 0.12);
   box-shadow: 0px 1px 1.5px rgba(0, 0, 0, 0.12);
+  z-index: 1000;
   display: block;
   background: #a52714;
   width: 100%;
@@ -44,6 +45,14 @@ header {
 }
 header h1 {
   line-height: 197px;
+}
+header.sticky {
+  position: fixed;
+  top: 0px;
+  height: 64px;
+}
+header.sticky h1 {
+  line-height: 64px;
 }
 main {
   display: block;

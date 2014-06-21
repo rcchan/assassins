@@ -11,6 +11,7 @@
 
 @width-inner: 960px;
 @height-header: 128px;
+@height-header-sticky: 64px;
 
 .shadow-depth-1 {
   box-shadow: 0px 1px 1.5px fade(@black, 12%);
@@ -49,6 +50,7 @@ h2 {
 
 header {
   .shadow-depth-1;
+  z-index: 1000;
   display: block;
   background: @color-header;
   width: 100%;
@@ -56,6 +58,16 @@ header {
 
   h1 {
     line-height: @height-header * 2 - 51px - 8px;
+  }
+
+  &.sticky {
+    position: fixed;
+    top: 0px;
+    height: @height-header-sticky;
+
+    h1 {
+      line-height: @height-header-sticky;
+    }
   }
 }
 

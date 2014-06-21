@@ -1,5 +1,21 @@
 $(document).ready(function() {
-  //setMinSectionHeights();
+  setMinSectionHeights();
+  stickyHeader();
+});
+
+/**
+ * Sticks the header to the top of the page when scrolling.
+ */
+$(document).scroll(function() {
+  var documentScrollTop = $(document).scrollTop();
+  if (documentScrollTop > 64) {
+    $('header').addClass('sticky');
+    $('main').css('padding-top', '128px');
+  }
+  else if ($('header').hasClass('sticky')) {
+    $('header').removeClass('sticky');
+    $('main').css('padding-top', '0px');
+  }
 });
 
 /**
